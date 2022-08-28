@@ -1,6 +1,6 @@
-import 'package:bmi_calculator/bmi_brain.dart';
-import 'package:bmi_calculator/widget/calculation_widget.dart';
-import 'package:bmi_calculator/widget/custom_widget.dart';
+import 'package:bmi_calculator/data/repositories/bmi_repo.dart';
+import 'package:bmi_calculator/widgets/buttons/calculation_widget.dart';
+import 'package:bmi_calculator/widgets/main_widget/custom_widget.dart';
 
 import 'package:flutter/material.dart';
 
@@ -34,9 +34,9 @@ class SecondScreen extends StatelessWidget {
                   child: CustomWidget(
                       widgetChild: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children:  [
+                    children: [
                       Text(
-                        BmiBrain.getResult(bmiResultat),
+                        BmiRepo.getResult(bmiResultat),
                         style: const TextStyle(
                           fontSize: 30,
                           color: Colors.green,
@@ -50,7 +50,7 @@ class SecondScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        BmiBrain.getInterpretation(bmiResultat),
+                        BmiRepo.getInterpretation(bmiResultat),
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
